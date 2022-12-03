@@ -4,6 +4,14 @@ import streamlit as st
 import os,tempfile
 from pathlib import Path
 
+from torchvision import *
+
+from torch import *
+
+import torchvision.models as models
+import torchvision.transforms as transforms
+import torch.nn.functional as F
+import torch.nn as nn
 from PIL import Image
 
 st.set_page_config(page_title="Emergency Vehicle Detection", page_icon="./icon.jpg", layout="wide", initial_sidebar_state="auto", menu_items=None)
