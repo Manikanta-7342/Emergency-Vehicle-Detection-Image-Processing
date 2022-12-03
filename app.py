@@ -41,6 +41,6 @@ if columns[1].button('Run Model'):
             time.sleep(1)
             im = Image.open(image_path)
             st.image(im)
-            with open('emer.txt', 'r') as file:
+            with open('./blob/9b5641a975252aa03483eaaf0811950b1854ec09/emer.txt', 'r') as file:
                 for line in file.readlines():
                     st.write(line)
