@@ -83,7 +83,7 @@ def predict_emergency_vehicle(image_path):
 
     proba = proba.detach().numpy()[0]
     idx = idx.numpy()[0]
-    with open('./blob/9b5641a975252aa03483eaaf0811950b1854ec09/emer.txt', 'w') as file:
+    with open('emer.txt', 'w') as file:
         file.write("Emergency_Vehicle\nConfidence Level:"+str(float(proba))) if idx == 1 else file.write("Non_Emergency Vehicle\nConfidence Level:"+str(float(proba)))
 
 
