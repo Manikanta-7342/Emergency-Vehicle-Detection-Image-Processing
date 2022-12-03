@@ -1,18 +1,13 @@
+import sys
+
 from PIL import Image,ImageFilter
 
-import torchvision.transforms as transforms
-from torchvision import *
-from torch import *
-import cv2 as cv2
 import time
 
 from torchvision import *
 
 from torch import *
 
-import torch.nn.functional as F
-import torch.nn as nn
-from torch.utils.data import Dataset, random_split, DataLoader
 import torchvision.models as models
 import torchvision.transforms as transforms
 import torch.nn.functional as F
@@ -86,18 +81,12 @@ def predict_emergency_vehicle(image_path):
 
     proba = proba.detach().numpy()[0]
     idx = idx.numpy()[0]
-
-    print("Emergency_Vehicle") if idx == 1 else print("Non_Emergency Vehicle")
-    print("Confidence Level", float(proba))
-
-
-# video_reader_east = cv2.VideoCapture(east_path)
+    with open('emer.txt', 'w') as file:
+        file.write("Emergency_Vehicle\nConfidence Level:"+str(float(proba))) if idx == 1 else file.write("Non_Emergency Vehicle\nConfidence Level:"+str(float(proba)))
 
 
 
-predict_emergency_vehicle("Test/Test1.jpg")
-# predict_emergency_vehicle(im_output+"south.png")
-# predict_emergency_vehicle(im_output+"west.png")
-# predict_emergency_vehicle(im_output+"north.png")
+predict_emergency_vehicle(sys.argv[1])
+
 
 print('\n\n', 'Time taken: ', time.time() - tick)
