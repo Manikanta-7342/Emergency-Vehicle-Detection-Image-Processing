@@ -4,14 +4,14 @@ import sys
 
 import time
 
-# from torchvision import *
-#
-# from torch import *
-#
-# import torchvision.models as models
-# import torchvision.transforms as transforms
-# import torch.nn.functional as F
-# import torch.nn as nn
+from torchvision import *
+
+from torch import *
+
+import torchvision.models as models
+import torchvision.transforms as transforms
+import torch.nn.functional as F
+import torch.nn as nn
 from torchvision.utils import make_grid
 
 
