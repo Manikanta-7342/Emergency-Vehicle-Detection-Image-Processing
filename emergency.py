@@ -72,6 +72,8 @@ def predict_emergency_vehicle(image_path):
 
     image = Image.open(uploaded_file).convert('RGB')
 
+    image = image.resize((224,224))
+
     image = image.filter(ImageFilter.MedianFilter)
 
     image = transform(image).view(1, 3, 224, 224)

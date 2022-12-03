@@ -24,11 +24,12 @@ st.markdown("----", unsafe_allow_html=True)
 
 image = st.file_uploader("Upload image",type=['jpg','jpeg','png'])
 
-columns = st.columns((4.3, 1, 4.3))
+
+columns = st.columns((4, 1, 4))
 
 if columns[1].button('Run Model'):
     if (image == None):
-        st.warning('Please Upload All Files', icon="⚠️")
+        st.warning('Please Upload File', icon="⚠️")
     else:
         # time.sleep(5)
         with tempfile.NamedTemporaryFile(delete=False) as tmp_1_file:

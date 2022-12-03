@@ -1,2 +1,0 @@
-Emergency_Vehicle
-Confidence Level:0.9996669292449951
