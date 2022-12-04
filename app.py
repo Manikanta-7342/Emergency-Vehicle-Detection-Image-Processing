@@ -3,7 +3,7 @@ import time
 import streamlit as st
 import os,tempfile
 from pathlib import Path
-
+from emergency import *
 from PIL import Image
 
 st.set_page_config(page_title="Emergency Vehicle Detection", page_icon="./icon.jpg", layout="wide", initial_sidebar_state="auto", menu_items=None)
@@ -37,10 +37,8 @@ if columns[1].button('Run Model'):
             fp = Path(tmp_1_file.name)
             fp.write_bytes(image.getvalue())
             image_path = tmp_1_file.name
-            os.system('python emergency.py '+image_path)
-            time.sleep(1)
+            li=predict_emergency_vehicle(image_path)
             im = Image.open(image_path)
             st.image(im)
-            with open('emer.txt', 'r') as file:
-                for line in file.readlines():
-                    st.write(line)
+            st.write(li[0])
+            st.write("Confidence Level: "+li[1])

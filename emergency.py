@@ -80,15 +80,14 @@ def predict_emergency_vehicle(image_path):
 
     pred = loaded_densenet169.forward(image)
     proba, idx = torch.max(torch.sigmoid(pred), dim=1)
-
+    li=[]
     proba = proba.detach().numpy()[0]
     idx = idx.numpy()[0]
-    with open('emer.txt', 'w') as file:
-        file.write("Emergency_Vehicle\nConfidence Level:"+str(float(proba))) if idx == 1 else file.write("Non_Emergency Vehicle\nConfidence Level:"+str(float(proba)))
 
+    li.append("Emergency Vehicle") if idx == 1 else li.append("Non_Emergency Vehicle")
+    li.append(str(float(proba)))
+    return li
 
-
-predict_emergency_vehicle(sys.argv[1])
 
 
 print('\n\n', 'Time taken: ', time.time() - tick)
