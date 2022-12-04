@@ -9,4 +9,4 @@ Firstly, the image is processed and the presence of emergency vehicles are found
 Image Classification alogorithm: DenseNet-169 
 Teck Stack: Python, Streamlit
 
-Here you check my model: https://manikanta-7342-emergency-vehicle-detection-image-pro-app-u86uap.streamlit.app
+Here you check my model: https://manikanta-7342-emergency-vehicle-detection-image-pro-app-bk0tll.streamlit.app/
